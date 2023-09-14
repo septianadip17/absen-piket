@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piket Absen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="absen-form">
+        <h2>Absen Piket Asisten Lab LKU</h2>
+        <form id="absenForm">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="tanggal">Tanggal:</label>
+            <input type="date" id="tanggal" name="tanggal" required>
+
+            <button type="submit">Absen</button>
+        </form>
+    </div>
+    <script type="text/javascript">
+    const absenForm = document.getElementById('absenForm');
+    const absensiData = []; // Gunakan array untuk menyimpan data absensi
+
+    absenForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const nama = document.getElementById('nama').value;
+        const tanggal = document.getElementById('tanggal').value;
+
+        // Buat objek data absensi
+        const absensi = {
+            nama: nama,
+            tanggal: tanggal
+        };
+
+        // Tambahkan data absensi ke dalam array
+        absensiData.push(absensi);
+
+        // Tampilkan pesan sukses atau lakukan yang lain sesuai kebutuhan Anda
+        alert('Absensi berhasil!');
+
+        // Reset formulir
+        absenForm.reset();
+    });
+</script>
+
+</body>
+</html>
